@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="BlueBook — discover ideas and connect with people.">
+  <title>BlueBook — Discover & Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="BlueBook home"><span class="brand-mark">b</span><span>bluebook</span></a>
+    <form id="search-form" class="searchbar"><span class="search-icon">⌕</span><input id="search-input" placeholder="Search people, posts and ideas" aria-label="Search"><button type="submit">Search</button></form>
+    <nav class="top-actions">
+      <button class="icon-btn active" data-view="feed" aria-label="Home">⌂</button>
+      <button class="icon-btn" data-view="discover" aria-label="Discover">◎</button>
+      <button class="avatar small-avatar" id="header-avatar" aria-label="Profile">?</button>
+      <button class="text-btn" id="auth-open">Sign in</button>
+      <button class="primary-btn compact" id="signup-open">Join free</button>
+      <button class="text-btn hidden" id="logout-btn">Log out</button>
+    </nav>
+  </header>
+
+  <main id="landing" class="landing">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR SPACE ON THE INTERNET</div>
+        <h1>Find your people.<br><span>Follow your curiosity.</span></h1>
+        <p>Search for fresh ideas, share what matters, and build meaningful connections — all in one bright, welcoming place.</p>
+        <div class="hero-buttons"><button class="primary-btn" id="hero-join">Create your account <span>→</span></button><button class="secondary-btn" id="hero-explore">Explore the feed</button></div>
+        <div class="social-proof"><div class="mini-avatars"><span>J</span><span>M</span><span>A</span><span>+</span></div><span><strong>A little corner for everyone.</strong><br>Ideas grow when they're shared.</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-card search-card"><div class="fake-google"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div><div class="fake-search"><span>⌕</span> ideas worth sharing <span class="fake-mic">⌁</span></div><div class="search-pills"><i>Discover</i><i>Learn</i><i>Connect</i></div></div>
+        <div class="floating-card post-card"><div class="post-head"><div class="avatar purple">M</div><div><strong>Maya Chen</strong><small>Design & creativity · 8 min</small></div><span class="dots">•••</span></div><p>Small reminder: you don't have to have it all figured out to begin. ✨</p><div class="post-reactions"><span>💙 24</span><span>💬 8 comments</span></div><div class="post-line"></div></div>
+        <div class="float-bubble bubble-heart">♡</div><div class="float-bubble bubble-spark">✦</div><div class="float-bubble bubble-chat">✎</div>
+      </div>
+    </div>
+    <section class="feature-strip"><div><span class="feature-icon blue-bg">⌕</span><div><strong>Search everything</strong><p>Find people, topics, and conversations.</p></div></div><div><span class="feature-icon violet-bg">♡</span><div><strong>Share your world</strong><p>Post ideas and join the discussion.</p></div></div><div><span class="feature-icon cyan-bg">✦</span><div><strong>Make connections</strong><p>Meet people who love what you love.</p></div></div></section>
+  </main>
+
+  <main id="app-shell" class="app-shell hidden">
+    <aside class="left-sidebar">
+      <div class="side-profile"><div class="avatar" id="sidebar-avatar">?</div><div><strong id="sidebar-name">Welcome</strong><small id="sidebar-email">Sign in to get started</small></div></div>
+      <button class="side-link selected" data-view="feed"><span>⌂</span> Home feed</button>
+      <button class="side-link" data-view="discover"><span>◎</span> Discover people</button>
+      <button class="side-link" data-view="profile"><span>◉</span> My profile</button>
+      <div class="sidebar-divider"></div><p class="side-label">YOUR SHORTCUTS</p>
+      <button class="side-link" data-topic="Design"><span class="topic-dot dot-blue"></span> Design & creativity</button>
+      <button class="side-link" data-topic="Technology"><span class="topic-dot dot-purple"></span> Technology</button>
+      <button class="side-link" data-topic="Learning"><span class="topic-dot dot-green"></span> Learning</button>
+      <div class="sidebar-note"><div class="note-icon">✦</div><strong>Good things start here.</strong><p>Be curious. Be kind. Be yourself.</p></div>
+    </aside>
+    <section class="main-column">
+      <div id="feed-view">
+        <div class="section-heading"><div><p class="eyebrow small-eyebrow">YOUR COMMUNITY</p><h2>Home feed</h2></div><span class="live-pill"><i></i> The conversation is open</span></div>
+        <div class="composer card">
+          <div class="composer-top"><div class="avatar" id="composer-avatar">?</div><textarea id="post-body" maxlength="2000" placeholder="What's on your mind? Share an idea, a win, or a question…"></textarea></div>
+          <div class="composer-bottom"><span class="composer-hint">✦ Your voice belongs here</span><button class="primary-btn compact" id="post-submit">Publish post <span>↗</span></button></div>
+        </div>
+        <div id="feed-list" class="feed-list"><div class="loading">Loading community posts…</div></div>
+      </div>
+      <div id="discover-view" class="hidden">
+        <div class="section-heading"><div><p class="eyebrow small-eyebrow">FIND YOUR PEOPLE</p><h2>Discover people</h2></div></div>
+        <p class="section-intro">A few new faces to get your community started.</p><div id="people-list" class="people-grid"></div>
+      </div>
+      <div id="profile-view" class="hidden">
+        <div class="section-heading"><div><p class="eyebrow small-eyebrow">YOUR CORNER</p><h2>My profile</h2></div></div>
+        <div class="profile-card card"><div class="profile-cover"></div><div class="profile-details"><div class="avatar profile-avatar" id="profile-avatar">?</div><h3 id="profile-name">Your name</h3><p id="profile-email"></p><label for="bio-input">A little about you</label><textarea id="bio-input" maxlength="180" placeholder="Tell the community what you're interested in…"></textarea><button class="primary-btn compact" id="save-bio">Save profile</button></div></div>
+      </div>
+      <div id="notice" class="notice hidden" role="status"></div>
+    </section>
+    <aside class="right-sidebar">
+      <div class="right-card card"><div class="right-card-title"><h3>Explore ideas</h3><span>✦</span></div><button class="trend" data-search="design"><span class="trend-symbol trend-blue">✎</span><span><strong>Design & creativity</strong><small>Fresh perspectives and inspiration</small></span><span>→</span></button><button class="trend" data-search="technology"><span class="trend-symbol trend-purple">⌘</span><span><strong>Technology</strong><small>Build what's next</small></span><span>→</span></button><button class="trend" data-search="learning"><span class="trend-symbol trend-green">↗</span><span><strong>Learning & growth</strong><small>One new thing at a time</small></span><span>→</span></button></div>
+      <div class="right-card card community-card"><div class="community-illustration">✦</div><h3>A better feed starts with you.</h3><p>Share thoughtfully, celebrate others, and make room for new perspectives.</p><button class="secondary-btn full" data-view="discover">Meet the community</button></div>
+      <footer class="footer-links">About · Community guidelines · Privacy<br><span>© 2026 BlueBook Social</span></footer>
+    </aside>
+  </main>
+
+  <div class="modal-backdrop hidden" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="auth-modal"><button class="modal-close" id="modal-close" aria-label="Close">×</button><a class="brand modal-brand" href="#"><span class="brand-mark">b</span><span>bluebook</span></a><div class="modal-icon">✦</div><h2 id="modal-title">Welcome to your people.</h2><p class="modal-subtitle" id="modal-subtitle">Sign in to join the conversation.</p>
+      <div class="auth-tabs"><button class="auth-tab active" data-auth-mode="login">Sign in</button><button class="auth-tab" data-auth-mode="register">Create account</button></div>
+      <form id="auth-form"><div id="name-field" class="form-field hidden"><label for="auth-name">Your name</label><input id="auth-name" autocomplete="name" placeholder="e.g. Alex Morgan"></div><div class="form-field"><label for="auth-email">Email address</label><input id="auth-email" type="email" autocomplete="email" required placeholder="you@example.com"></div><div class="form-field"><label for="auth-password">Password</label><input id="auth-password" type="password" autocomplete="current-password" required minlength="8" placeholder="At least 8 characters"></div><p id="auth-error" class="form-error"></p><button class="primary-btn full" id="auth-submit" type="submit">Sign in <span>→</span></button></form><p class="terms-note">By joining, you agree to be kind and respectful to others.</p>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
