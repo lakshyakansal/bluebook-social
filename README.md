@@ -142,3 +142,10 @@ This is a functional learning/MVP starter, not a fully hardened commercial socia
 - **Native module install issue:** use a current Node.js LTS version (20+), remove `node_modules`, then rerun `npm install`.
 - **Data disappeared on Render:** check that the persistent disk is attached and `DB_PATH` points inside its mount directory.
 - **Login/session problems after deployment:** confirm `NODE_ENV=production`, use HTTPS (Render provides it), and set a stable `SESSION_SECRET`.
+
+  <div align="center">
+
+Developed by Lakshya Kansal
+
+</div>
+
